@@ -1,39 +1,749 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/zero.css">
-    <link rel="stylesheet" href="css/typography.css">
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+	<!-- meta tags, fill them with website meta infos -->
+	<meta name="description" content="Description of your web page" />
+	<meta name="keywords" content="Keyword 1, Keyword 2, Keyword 3, Keyword 4, Keyword 5 ..." />
+	<meta name="author" content="Name of the author/owner of the webpage's content" />
+
+	<!-- favicon, fill with a 512x512px .png image named 'favicon.png' -->
+	<link rel="icon" href="assets/images/favicon/favicon.png" />
+
+	<!-- website title, visible in the browser window and on link sharing -->
+	<title>logging nonhuman-human interactions</title>
+
+	<!-- links for extensions and dependencies -->
+
+	<!-- css -->
+	<!-- first link your CSS dependences, here is normalize, a CSS 'reset' for cross-browser appearence uniformity -->
+	<link rel="stylesheet" href="assets/css/normalize.css">
+	<!-- you stylesheet -->
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!-- js -->
+	<!-- first link your javascript dependencies -->
+
+	<!-- your website scripts goes at the end of this document, right before the closing body -->
 
 </head>
+
 <body>
-    <div class="page-wrapper">
 
-    <h1>
-essay on letters?s, <span class="kerning">Deserunt veniam</span> provident nemo?Deserunt veniam provident nemo?
-    </h1>
+	<!-- fixed layer for the 3 images (container) -->
+	<div class="image-layer" id="imageLayer"></div>
 
-    <main>
-        <article>
-       
-            <h2>
-            This is a sample HTML document.
-            </h2>
-            
-            <section class="measure">
-                <h3>title </h3>
-                <p >
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Id reprehenderit placeat animi nesciunt itaque nam eum! Accusantium consequuntur facere modi iusto tenetur asperiores impedit. Omnis, voluptate. Deserunt veniam provident nemo?Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis numquam commodi culpa, id ea pariatur qui est quisquaderit placeat animi nesciunt itaque nam eum! Accusantium consequuntur facere modi iusto tenetur asperiores impedit. Omnis, voluptate. Deserunt veniam provident nemo?Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis numquam commodi culpa, id ea pariatur qui est quisquam sed laboriosam eos accusantium nisi hic autem dolorem consectetur dicta facere voluptate!
-                </p>
-                <p class="indent">
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Id reprehenderit placeat animi nesciunt itaque nam eum! Accusantium consequuntur facere modi iusto tenetur asperiores impedit. Oprovident nemo?Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis numquam commodi culpa, id ea pariatur qui est quisquam sed laboriosam eos accusantium nisi hic autem dolorem consectetur dicta facere voluptate!
-                </p>
-            </section>
-        </article>
-    </main>
+	<div class="page-wrapper">
+		<header>
+			<h3 class="desktop-only">Log.</h3>
+			<h3 class="mobile-only">Log... mobile!</h3>
+			<h3>
+				<p>A <strong>document</strong> by <em>me</em></p>
+			</h3>
+		</header>
 
-     </div>
+		<main>
+			<!-- 
+        Many DETAILS elements – the first three (with class "target-details")
+        will be used to anchor the three images.
+      -->
+			<details class="target-details">
+				<summary>
+					<h3>It's 13:24. 121 million animals have been killed since midnight for human consumption.
+					</h3>
+				</summary>
+				<h3>
+					<p class="margin-m">30% of all landmass is used for livestock.</p>
+				</h3>
+			</details>
+
+			<details class="target-details">
+				<summary>
+					<h3>Every 1.2 seconds, one football pitch of forest is cut.</h3>
+				</summary>
+				<h3>
+					<p>(for animal feed, biofuel, palm oil, soy, cocoa and coffee, to mine for minerals, for wood &
+						timber, infrastructure and expansion.)</p>
+				</h3>
+			</details>
+
+			<details class="target-details">
+				<summary>
+					<h3>In July 2017, an old camphor tree inside Arisugawa-no-Miya Park was moved by 10m to make room
+						for road construction.</h3>
+				</summary>
+				<h3>
+					<p class="margin-l">A group of students in Zurich take up anew the act of picking linden blossoms for tea. 
+						<p class="margin-l">Through the previous abandonment of the act of picking, the trees have been rendered invisible.</p>
+						<p>A first version of the chainsaw was invented around 250 years ago as a medical instrument.</p>
+						<p class="margin-m">In Taoist tradition, you must warn a tree two weeks before cutting it down.</p>
+						<p>In 1996, it took a worker using traditional felling methods 18 minutes to cut down a tree in the
+						Brazilian Amazon.</p>
+						<p>Using “modern techniques of environmentally sound harvesting”, it took them 22 minutes.</p>
+						<p>Depending on the circumference of the stem, in 2010, a high-powered harvester needed 1-2 minutes
+						to fell a tree.</p>
+					</p>
+				</h3>
+			</details>
+
+			<!-- the rest (no target class) – just for text volume -->
+			<details>
+				<summary>
+					<h3 class="margin-l">A writer thinks about revisiting the tree whose root she fell over and broke her wrist, to beg
+						for a little solace.</h3>
+				</summary>
+			</details>
+			<details>
+
+				<summary>
+					<h3>Death by bolt is considered the most humane way of killing an animal.
+					</h3>
+				</summary>
+				<h3>
+					<p>
+						Within 2 milliseconds, the bolt causes a severe concussion at impact and massive over- and
+						underpressure in the brain when entering and exiting the head.
+						Due to strong rowing movements of their limbs, which endanger staff and make rapid and safe
+						exsanguination harder and the difficulty of tying them down tightly enough to guarantee precise
+						positioning of the apparatus, bolt killing is mostly prohibited with pigs.</p>
+						
+						<p class="margin-m">Suicide rates among slaughterhouse workers are higher than in any other sector.
+						An artist writes a letter to a dead pigeon she finds on the street.</p>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+			<details>
+				<summary>
+					<h3>Every pitch is cut.</h3>
+				</summary>
+				<h3>
+					<p>( mine for minerals and expansion.)</p>
+				</h3>
+			</details>
+
+
+
+		</main>
+
+		<footer>
+			<hr>
+			<p>Last edit date: 2023/12/11</p>
+		</footer>
+	</div>
+
+	<!-- script: creates three images, attaches parallax (double speed + irregular offsets) -->
+	<script>
+		(function () {
+			// ----- THREE IMAGES with IRREGULAR offsets from the first three DETAILS summaries -----
+			const imageLayer = document.getElementById('imageLayer');
+
+			// Target the first three <details> elements with class 'target-details'
+			const targetDetails = Array.from(document.querySelectorAll('details.target-details')).slice(0, 3);
+
+			if (targetDetails.length === 0) return;
+
+			// For each target, use the <summary> as the anchor (the visible heading)
+			const summaryElements = targetDetails.map(details => details.querySelector('summary')).filter(el => el !== null);
+			const anchorElements = summaryElements.length ? summaryElements : targetDetails;
+
+			const imageCount = anchorElements.length; // should be 3
+
+			// Irregular vertical offsets (pixels) – different for each image
+			const irregularOffsets = [80, -40, 150];  // tweak as desired
+
+			// Store base document Y for each anchor
+			let anchorBaseY = new Array(imageCount).fill(0);
+
+			// Create the three image elements
+			// Using placeholder images from picsum (you can replace with your own image URLs)
+			const imageUrls = [
+				'https://d2w9rnfcy7mm78.cloudfront.net/44325240/original_f10883b6ca62e4753967aca30078231d.jpg?1773222778?bc=0', // cutting tree
+				'https://d2w9rnfcy7mm78.cloudfront.net/44303257/original_a12f12c13623c60b747863a29763e08e.webp?1773161889?bc=0',  // beluga
+				'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSLtX_Jt6BgEbvrLLa_E7j5OAn7C9A4gDnUpAv7TjW0VALzyh4s'  // relocating tree
+			];
+
+			const imageElements = [];
+			for (let i = 0; i < imageCount; i++) {
+				const img = document.createElement('img');
+				img.className = 'parallax-image';
+				img.src = imageUrls[i % imageUrls.length];  // cycle through URLs
+				img.alt = 'floating image related to forest';
+				img.setAttribute('data-index', i);
+				imageLayer.appendChild(img);
+				imageElements.push(img);
+			}
+
+			// Update baseY array from current anchor positions (document‑relative)
+			function updateAnchorBaseY() {
+				for (let i = 0; i < anchorElements.length; i++) {
+					const el = anchorElements[i];
+					if (el) {
+						const rect = el.getBoundingClientRect();
+						anchorBaseY[i] = rect.top + window.scrollY;
+					}
+				}
+			}
+
+			// Apply transforms: use anchor Y + irregular offset, then subtract 2 * scrollY
+			function updateImagePositions() {
+				const scrollY = window.scrollY;
+				for (let i = 0; i < imageElements.length; i++) {
+					const img = imageElements[i];
+					const baseY = anchorBaseY[i];
+					const offset = irregularOffsets[i];
+					const translateY = (baseY + offset) - 4 * scrollY;
+					img.style.transform = `translateX(-50%) translateY(${translateY}px)`;
+				}
+			}
+
+			// Initial updates
+			updateAnchorBaseY();
+			updateImagePositions();
+
+			// Scroll event
+			window.addEventListener('scroll', () => {
+				requestAnimationFrame(updateImagePositions);
+			});
+
+			// Resize & load
+			window.addEventListener('resize', () => {
+				updateAnchorBaseY();
+				updateImagePositions();
+			});
+
+			window.addEventListener('load', () => {
+				updateAnchorBaseY();
+				updateImagePositions();
+			});
+
+			// Small delay for any font/layout shifts
+			setTimeout(() => {
+				updateAnchorBaseY();
+				updateImagePositions();
+			}, 200);
+
+			// ----- if details open/close changes layout, update baseY -----
+			const allDetails = document.querySelectorAll('details');
+			allDetails.forEach(details => {
+				details.addEventListener('toggle', () => {
+					setTimeout(() => {
+						updateAnchorBaseY();
+						updateImagePositions();
+					}, 30);
+				});
+			});
+
+		})();
+	</script>
 </body>
+
+
 </html>
