@@ -1,0 +1,45 @@
+.measure {
+    max-width: 33ch;
+    background-color: blanchedalmond;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 50%;
+    background-color: aquamarine;
+}
+
+h1 {
+    font-size: 6rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5rem;
+
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.875rem;
+        line-height: 1.25rem;
+
+}
+
+h3 {
+    font-size: 1.75rem;
+    font-weight: semi-bold;
+    margin-bottom: 0.75rem;
+    line-height: 1.25rem;
+}
+
+.indent {
+    text-indent: 2em;
+}
+
+p {
+    line-height: 1rem;
+}
+
+.kerning {
+    letter-spacing: -0.7rem;
+}
