@@ -2,22 +2,23 @@
 
  @font-face {
    font-family: 'leagueSpartan';
-   src: url('assets/fonts/leagueSpartan-extralight.woff2');
+   src: url('');
    font-weight: extralight;
    font-style: normal;
    font-display: block;
  }
 
  :root {
-   --color-background: rgba(255, 255, 255, 1);
-   --color-text: rgba(0, 0, 0, 1);
-   --color-text-link: rgba(255, 0, 0, 0.8);
-   --color-text-link-hover: rgba(246, 255, 0, 0.4);
-   --font-text: 'leagueSpartan', 'Helvetica', 'Arial', sans-serif;
+   --color-background: rgb(255, 255, 255);
+   --color-text: rgb(0, 0, 0);
+   --color-text-link: rgb(0, 0, 0);
+  --text-decoration-line: underline;
+   --color-text-link-hover: rgb(255, 0, 0);
+   --font-text: georgia, serif;
    --font-size: 40px;
    --margin: 1rem;
    --text-indent: 60px;
-   --font-size-heading: calc(var(--font-size) * 2);
+   --font-size-heading: calc(var(--font-size) * 6);
    --font-size-subheading: calc(var(--font-size) * 1.25);
    --font-size-caption: calc(var(--font-size) * 0.875);
    --margin-xs: calc(var(--margin) * 0.5);
@@ -25,38 +26,140 @@
    --margin-m: calc(var(--margin) * 2);
    --margin-l: calc(var(--margin) * 3);
    --margin-xl: calc(var(--margin) * 5);
-   --line-height-base: 1.2;
+   --width: 2.5rem;
+   --height: 2.5rem;
+   --line-height-base: 1.1;
+
  }
+
+
+html, body, * {
+    cursor: crosshair;
+}
+
+/* Pointer for clickable things */
+a, button, label, .image-label, 
+.toggle-sources-button, .toggle-contact-button, .toggle-abstract-button,
+.image-email-link, [for="toggle-image"] {
+    cursor: pointer !important;
+}
+
+/* Letter emoji cursor for images - using unicode character with custom cursor */
+img {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><text font-size="20" x="2" y="18">✉️</text></svg>'), pointer;
+}
+
+
+
+
+
 
  html {
    font-family: var(--font-text);
-   background-color: var(--color-background);
+   background-color:  rgb(255, 255, 255);
+
  }
 
  body {
    font-family: var(--font-text);
-   background-color: var(--color-background);
+   background-color: rgb(255, 255, 255);
+ counter-reset: lines;
+  }
+
+  p::before {
+  counter-increment: lines;
+  content: counter(lines) "";
+  position: absolute;
+  left: 0;
+  margin-top: 0.25rem;
+  font-size: 40%;
+  text-indent: var(--margin-m);
+  }
+
+
+ p {
+    font-size: var(--font-size);
+   font-weight: 300;
+   margin-bottom: calc(var(--margin)*-1);
+  margin-left: calc(var(--margin-xl)*1.3);
+    margin-right: calc(var(--margin-xl));
+    display: block;
+    color: rgb(0, 0, 0);
+    hyphens: allow;
  }
+
+
+/* ===== SOURCES STYLES – HYPHENATION & WRAPPING FIX ===== */
+		p.sources-content {
+			display: none !important;
+			font-size: var(--font-size);
+			font-weight: 300;
+			background-color: rgb(255, 255, 255);
+			margin-left: calc(var(--margin-xl)*1.3);
+			margin-right: calc(var(--margin-xl));
+			color: rgb(237, 237, 237);
+			hyphens: auto;
+			word-break: break-word;
+			overflow-wrap: break-word;
+			white-space: normal;
+			max-width: 85vw;
+			line-height: 1.4;
+		}
+
+		/* when sources are visible, we ensure they wrap properly */
+		body.showing-sources p.sources-content {
+			display: block !important;
+			word-break: break-word;
+			white-space: normal;
+			overflow-wrap: anywhere;
+			hyphens: auto;
+		}
+
+		p.sources-content a {
+			color: rgb(237, 237, 237);
+			word-break: break-all;
+			overflow-wrap: break-word;
+			text-decoration: underline;
+		}
+
+
+
+ #indented {
+  margin-left: calc(var(--margin-xl)*1.7);
+}
+
+ #indentedplusfirstline {
+  margin-left: calc(var(--margin-xl)*1.7);
+    text-indent: 1em;
+}
+
+#firstlineindent {
+  text-indent: 1em;
+}
 
  a {
    color: var(--color-text-link);
  }
 
- a:hover {
-   color: var(--color-text-link-hover);
+
+p.sources-content a:hover {
+   color: rgb(255, 0, 0);
  }
 
- 
- h3 {
+
+   h1 {
    font-size: var(--font-size);
    font-weight: 300;
-   margin-bottom: calc(var(--margin)*-0.75);
+   margin-bottom: 0.3em;
+   color: rgb(255, 255, 255);
+   padding: 0;
  }
+ 
+ h3 {
+  font-size: 60%;
+   font-weight: 300;
+margin: 1em; }
 
- .page-wrapper>*+* {
-   margin-top: calc(var(--line-height-base) * 1rem * 5);
-   /* subtle spacing */
- }
 
 
 .margin-m {
@@ -68,56 +171,301 @@ margin-left: calc(var(--margin-l)*2);
 }
 
 
- details p,
- details h3 {
-   line-height: var(--line-height-base);
-   padding: 0;
- }
-
- details {
-   font-size: var(--font-size);
- }
-
- p {
-   font-size: var(--font-size);
-   margin-bottom: calc(var(--margin)*-0.75);
- }
 
 
 
 
- /* page structure */
- div.page-wrapper {
-   padding: var(--margin);
-   max-width: 800px;
-   margin: 0 auto;
-   position: relative;
-   z-index: 2;
-   background: transparent;
-   pointer-events: auto;
- }
 
 
 
- /* removing the triangle */
- details>summary {
-   list-style: none;
-   /* removes the triangle in most browsers */
-   cursor: pointer;
- }
 
- details>summary::-webkit-details-marker {
-   display: none;
-   /* Safari/Chrome */
- }
+/* Header button styles */
+		.menubar {
+			position:relative;
+     margin-top: -1.5em;
+			z-index: 100;
+			text-align: center;
+		}
 
- details>summary::marker {
-   display: none;
-   /* Firefox */
-   content: "";
-   /* additional safety */
- }
+		.toggle-sources-button {
+      background-color: transparent;
+      font-size: calc(var(--font-size)*4);
+			transition: all 0.2s ease;
+       width:var(--width);
+      height: var(--height);
+      color: rgb(0, 0, 0);
+       border: none;
+       left: -2em;
+    		}
 
+		.toggle-sources-button.active {
+      background-color: transparent;
+      color: rgb(255, 0, 0);
+      border: none;
+      baseline-shift: 5em;
+    }
+
+	.toggle-sources-button:hover {
+      background-color: transparent;
+      color:  rgb(255, 0, 0);
+      /* filter: blur(5px);
+      padding: 5px; */
+		}
+
+    /* When showing sources, shift the asterisk down */
+body.showing-sources .toggle-sources-button {
+    transform: translateY(0.25em);
+}
+
+/* Keep the dot at normal position when not active */
+.toggle-sources-button {
+    transition: transform 0.2s ease;
+}
+
+
+
+
+
+		.toggle-contact-button {
+      background-color: transparent;
+      font-size: calc(var(--font-size)*1);
+			transition: all 0.2s ease;
+       width:var(--width);
+      height: var(--height);
+      color: rgb(0, 0, 0);
+       border: none;
+       left: -2em;
+    		}
+
+		.toggle-contact-button.active {
+            background-color: transparent;
+      color: rgb(0, 0, 0);
+       border: none;
+
+    }
+
+	.toggle-contact-button:hover {
+      background-color: transparent;
+      color:  rgb(255, 0, 0);
+      /* filter: blur(5px);
+      padding: 5px; */
+		}
+
+/* CONTACT OVERLAY STYLES */
+.contact-overlay {
+    position: fixed;
+    top: 0;
+    left: 75%;
+    transform: translateX(-50%);
+    width: 15%;
+    background-color: rgb(255, 0, 0);
+    color: rgb(0, 0, 0);
+    padding: 0.5em;
+    z-index: 9999;
+    display: none;
+    text-align: center;
+    font-size: calc(var(--font-size) * 0.8);
+    line-height: 1.4;
+}
+
+.contact-overlay.show {
+    display: block;
+}
+
+.contact-overlay p {
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.contact-overlay a {
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+}
+
+.contact-overlay a:hover {
+    color: rgb(255, 255, 255);
+}
+
+
+
+
+
+
+		.toggle-abstract-button {
+      background-color: transparent;
+      font-size: 100%;
+			transition: all 0.2s ease;
+       width:var(--width);
+      height: var(--height);
+      color: rgb(0, 0, 0);
+       border: none;
+       left: -2em;
+    		}
+
+		.toggle-abstract-button.active {
+            background-color: transparent;
+      color: rgb(0, 0, 0);
+       border: none;
+
+    }
+
+	.toggle-abstract-button:hover {
+      background-color: transparent;
+      color:  rgb(255, 0, 0);
+      /* filter: blur(5px); */
+      /* padding: 5px; */
+		}
+
+    /* CONTACT abstract STYLES */
+.abstract-overlay {
+    position: fixed;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 55%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    padding: 0.5em;
+    z-index: 9999;
+    display: none;
+    text-align: left;
+    line-height: 1.4;
+}
+
+.abstract-overlay.show {
+    display: block;
+}
+
+.abstract-overlay p {
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.abstract-overlay a {
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+}
+
+.abstract-overlay a:hover {
+    color: rgb(255, 255, 255);
+}
+
+
+
+
+
+
+
+
+
+		/* Source content styling */
+	p.sources-content {
+    		  display: none !important;
+    		  font-size: var(--font-size);
+    		  font-weight: 300;
+        background-color: rgb(255, 255, 255);
+        margin-left: calc(var(--margin-xl)*1.3);
+        color:   rgb(237, 237, 237);
+    		}
+
+p.sources-content:hover{
+      display: none !important;
+			font-size: var(--font-size);
+			font-weight: 300;
+color: rgb(0, 0, 0);   
+}
+
+
+    p.sources-content a {
+          color:  rgb(237, 237, 237);
+        }
+
+            p.sources-content a:hover{
+          color: rgb(0, 0, 0);
+        }
+  
+
+
+		/* WHEN SHOWING SOURCES: hide main paragraphs */
+		body.showing-sources .main-content {
+			display: none !important;
+		}
+
+		/* WHEN SHOWING SOURCES: show source paragraphs */
+		body.showing-sources .sources-content {
+			display: block !important;
+		}
+
+		/* WHEN SHOWING SOURCES: hide original sources link */
+		body.showing-sources .original-sources {
+			display: none !important;
+		}
+
+		
+    
+
+
+
+
+
+
+
+
+/* IMAGES and Lables */
+
+		.animal-link {
+			color: var(--color-text-link);
+			position: relative;
+			z-index: 10;
+		}
+
+		.animal-link:hover {
+			color: var(--color-text-link-hover);
+		}
+
+		/* The hidden image that appears when checkbox is checked */
+		.animal-image {
+      position: sticky;
+			display: none;
+      top: 3em;
+      width: 0;  
+     height: 0;  
+}
+
+    img {
+      width:var(--width);
+      height: var(--height);
+      padding-left: calc( var(--margin) * 3);
+      padding-top: 1.15rem;
+      filter: grayscale(0);
+       }
+
+
+      /* Checkbox hack - hide the checkbox */
+		#toggle-image {
+      filter: opacity(0);
+		}
+
+		/* Show image when checkbox is checked */
+		#toggle-image:checked ~ .animal-image {
+			display: block;
+    		}
+
+		/* Label styled as link */
+		.image-label {
+			color: var(--color-text-link);
+      text-decoration-line: none;  
+			display: inline;
+      background-color: rgb(237, 237, 237);
+		}
+
+		.image-label:hover {
+			color: var(--color-text-link-hover);
+		}
+
+.image-email-link {
+    display: inline-block;
+  }
 
 
 
@@ -133,57 +481,31 @@ margin-left: calc(var(--margin-l)*2);
 
 
 
-
- /* ----- IMAGE LAYER (three images, replacing grey squares) ----- */
- .image-layer {
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   pointer-events: none;
-   /* clicks go through to text */
-   z-index: 5;
-   overflow: visible;
- }
-
- .parallax-image {
-   position: absolute;
-   top: 0;
-   left: 50%;
-   margin: 5vw;
-   height: 50px;
-   width: 50px;
-   object-fit: cover;
-   /* makes images fill the square without distortion */
-   opacity: 0.85;
-   /* slightly transparent, adjust as needed */
-   transform: translateX(50%);
-   will-change: transform;
-   /* no border, no radius, no blur – plain image */
- }
-
-
-
-
-
-
  /* responsive typeface (your media queries) */
  @media (max-width: 299px) {
    :root {
-     --font-size: 18px;
+     --font-size: 9px;
+                  margin-right: var(--margin-xs);
+   }
+   
+   p{
+    margin-right: var(--margin-s);
    }
 
    html,
    body {
      font: var(--font-size) var(--font-text);
    }
- }
+  }
 
  @media (min-width: 299px) and (max-width: 340px) {
    :root {
-     --font-size: 19px;
+     --font-size: 12px;
    }
+
+   p{          
+     margin-right: calc(var(--margin-m)*1.25);
+    }
 
    html,
    body {
@@ -193,8 +515,12 @@ margin-left: calc(var(--margin-l)*2);
 
  @media (min-width: 340px) and (max-width: 440px) {
    :root {
-     --font-size: 20px;
+     --font-size: 15px;
    }
+
+    p{          
+       margin-right: var(--margin-l);
+    }
 
    html,
    body {
@@ -204,8 +530,12 @@ margin-left: calc(var(--margin-l)*2);
 
  @media (min-width: 441px) and (max-width: 779px) {
    :root {
-     --font-size: 19px;
+     --font-size: 18px;
    }
+
+   p{          
+       margin-right: var(--margin-l);
+    }
 
    html,
    body {
@@ -213,10 +543,30 @@ margin-left: calc(var(--margin-l)*2);
    }
  }
 
- @media (min-width: 780px) and (max-width: 992px) {
+
+ @media (min-width: 441px) and (max-width: 639px) {
    :root {
      --font-size: 20px;
    }
+
+   p{          
+       margin-right: var(--margin-l);
+    }
+
+   html,
+   body {
+     font: var(--font-size) var(--font-text);
+   }
+ }
+
+ @media (min-width: 640px) and (max-width: 992px) {
+   :root {
+     --font-size: 23px;
+   }
+
+   p{          
+       margin-right: var(--margin-l);
+    }
 
    html,
    body {
@@ -226,8 +576,16 @@ margin-left: calc(var(--margin-l)*2);
 
  @media (min-width: 993px) and (max-width: 1200px) {
    :root {
-     --font-size: 21px;
+     --font-size: 27px;
    }
+      
+   p{          
+       margin-right: var(--margin-l);
+    }
+
+     p::before {
+  text-indent: var(--margin-m);
+  }
 
    html,
    body {
@@ -237,8 +595,16 @@ margin-left: calc(var(--margin-l)*2);
 
  @media (min-width: 1201px) and (max-width: 1320px) {
    :root {
-     --font-size: 22px;
+     --font-size: 35px;
    }
+
+   p{          
+       margin-right: var(--margin-l);
+    }
+
+     p::before {
+  text-indent: var(--margin-m);
+  } 
 
    html,
    body {
@@ -248,14 +614,22 @@ margin-left: calc(var(--margin-l)*2);
 
  @media (min-width: 1321px) {
    :root {
-     --font-size: 15px;
+     --font-size: 37px;
    }
+
+    p::before {
+  text-indent: var(--margin-m);
+  } 
    
    html,
    body {
      font: var(--font-size) var(--font-text);
    }
+
  }
+
+
+
 
  @media (max-width: 779px) {
    .desktop-only {
@@ -267,10 +641,3 @@ margin-left: calc(var(--margin-l)*2);
    }
  }
 
- /* make images a bit smaller on narrow screens */
- @media (max-width: 600px) {
-   .parallax-image {
-     width: 50px;
-     height: 50px;
-   }
- }
