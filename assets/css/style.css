@@ -35,6 +35,8 @@
 
 html, body, * {
     cursor: crosshair;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 /* Pointer for clickable things */
@@ -50,10 +52,6 @@ img {
 }
 
 
-
-
-
-
  html {
    font-family: var(--font-text);
    background-color:  rgb(255, 255, 255);
@@ -61,6 +59,7 @@ img {
  }
 
  body {
+  margin-top: 2.5em;
    font-family: var(--font-text);
    background-color: rgb(255, 255, 255);
  counter-reset: lines;
@@ -150,7 +149,6 @@ p.sources-content a:hover {
    h1 {
    font-size: var(--font-size);
    font-weight: 300;
-   margin-bottom: 0.3em;
    color: rgb(255, 255, 255);
    padding: 0;
  }
@@ -159,6 +157,8 @@ p.sources-content a:hover {
   font-size: 60%;
    font-weight: 300;
 margin: 1em; }
+
+
 
 
 
@@ -173,6 +173,45 @@ margin-left: calc(var(--margin-l)*2);
 
 
 
+#hideMe {
+    -moz-animation: cssAnimation 0s ease-in 4s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 4s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 4s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 4s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        overflow:hidden;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility:hidden;
+    }
+}
+
+.extrainfo {
+   font-size: 35%;
+			color: rgb(0, 0, 0);
+   font-weight: 300;
+   text-align: center !important;
+  background-color: rgba(237, 237, 237, 0.99);
+width: 100vw;
+height: 100vh;
+padding-top: 45vh;
+ translate: 0% -7%;
+z-index: 20000;
+  position: fixed;
+}
 
 
 
@@ -180,12 +219,19 @@ margin-left: calc(var(--margin-l)*2);
 
 
 /* Header button styles */
-		.menubar {
-			position:relative;
-     margin-top: -1.5em;
-			z-index: 100;
-			text-align: center;
-		}
+	 .menubar {
+    color: rgb(255, 0, 0) !important;
+            position: fixed !important;
+            top: 0rem !important;
+            left:  1.5em !important;
+            background-color: rgba(255, 255, 255, 0)!important;
+            z-index: 10000 !important;
+            width: auto !important;
+            display: inline-block !important;
+            text-align: center !important;
+            translate: 0% -30% !important;
+        }
+         
 
 		.toggle-sources-button {
       background-color: transparent;
@@ -193,10 +239,9 @@ margin-left: calc(var(--margin-l)*2);
 			transition: all 0.2s ease;
        width:var(--width);
       height: var(--height);
-      color: rgb(0, 0, 0);
+      color: rgb(255, 0, 0);
        border: none;
-       left: -2em;
-    		}
+       left: -2em;		}
 
 		.toggle-sources-button.active {
       background-color: transparent;
@@ -207,7 +252,7 @@ margin-left: calc(var(--margin-l)*2);
 
 	.toggle-sources-button:hover {
       background-color: transparent;
-      color:  rgb(255, 0, 0);
+      color:  rgb(0, 0, 0);
       /* filter: blur(5px);
       padding: 5px; */
 		}
@@ -232,9 +277,10 @@ body.showing-sources .toggle-sources-button {
 			transition: all 0.2s ease;
        width:var(--width);
       height: var(--height);
-      color: rgb(0, 0, 0);
+      color: rgb(255, 0, 0);
        border: none;
        left: -2em;
+       
     		}
 
 		.toggle-contact-button.active {
@@ -246,7 +292,7 @@ body.showing-sources .toggle-sources-button {
 
 	.toggle-contact-button:hover {
       background-color: transparent;
-      color:  rgb(255, 0, 0);
+      color:  rgb(0, 0, 0);
       /* filter: blur(5px);
       padding: 5px; */
 		}
@@ -297,21 +343,21 @@ body.showing-sources .toggle-sources-button {
 			transition: all 0.2s ease;
        width:var(--width);
       height: var(--height);
-      color: rgb(0, 0, 0);
+      color: rgb(255, 0, 0);
        border: none;
        left: -2em;
     		}
 
 		.toggle-abstract-button.active {
             background-color: transparent;
-      color: rgb(0, 0, 0);
+      color: rgb(255, 0, 0);
        border: none;
 
     }
 
 	.toggle-abstract-button:hover {
       background-color: transparent;
-      color:  rgb(255, 0, 0);
+      color:  rgb(0, 0, 0);
       /* filter: blur(5px); */
       /* padding: 5px; */
 		}
