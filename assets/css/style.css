@@ -208,7 +208,7 @@ margin-left: calc(var(--margin-l)*2);
 width: 100vw;
 height: 100vh;
 padding-top: 50vh;
- translate: 0% -7%;
+ translate: 0% -8%;
 z-index: 20000;
   position: fixed;
 }

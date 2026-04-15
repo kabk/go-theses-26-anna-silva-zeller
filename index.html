@@ -16,7 +16,7 @@
 	<link rel="icon" href="assets/images/favicon/favicon.png" />
 
 	<!-- website title, visible in the browser window and on link sharing -->
-	<title>logging nonhuman-human interactions</title>
+	<title>>log.</title>
 
 	<!-- links for extensions and dependencies -->
 
@@ -637,14 +637,19 @@ I must love you very much.</a></p>
 <p class="main-content">On the last page of a cookbook, the author speculates that the lack of articulation of the animal might be caused by a state of deep meditation. Another theory is that they speak so slowly that by the time they have spoken one word, they have already died.</p>
 <p class="sources-content"><a href="" target="_blank">May, Lin. Recipes from Iraq. Bonner Kunstverein, 2012.</a></p>
 
-<br>
-		<footer>
-			<br>
-			<hr>
-			<h3>Last edit date: 2026/04/06</h3>
-		</footer>
+<br>		
 	</div>
 
+	<div>
+		<br>
+	</div>
+<div>
+	<br>
+	</div>
+	<div>
+		<br>
+	</div>
+	
 	
 	<script>
 		// Minimal JavaScript - just toggles a class on the body
@@ -745,6 +750,21 @@ I must love you very much.</a></p>
 				toggleAbstract();
 			}
 		});
+
+
+
+
+
+
+document.querySelectorAll('.image-label').forEach(label => {
+    label.addEventListener('click', function(e) {
+        e.preventDefault();
+        const checkbox = document.getElementById('toggle-image');
+        checkbox.checked = !checkbox.checked;
+    });
+});
+
+
 
 
 	</script>
